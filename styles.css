@@ -5,9 +5,7 @@
 body {
     min-height: 100vh;
     margin: 0;
-    padding: 32px 20px;
-    display: grid;
-    place-items: center;
+    padding: 48px 20px;
     color: #f6f2ff;
     background:
         radial-gradient(ellipse at 50% 38%, rgba(125, 67, 185, 0.28), transparent 42%),
@@ -18,8 +16,9 @@ body {
 
 .page {
     position: relative;
-    width: min(100%, 440px);
-    padding: 48px 38px 30px;
+    width: min(100%, 900px);
+    margin: 0 auto;
+    padding: 48px clamp(24px, 6vw, 64px) 28px;
     overflow: hidden;
     text-align: center;
     background: linear-gradient(150deg, rgba(38, 31, 52, 0.94), rgba(25, 20, 35, 0.96));
@@ -91,18 +90,19 @@ h1 span {
 }
 
 .intro {
-    margin: 12px 0 28px;
+    margin: 12px 0 24px;
     color: #b7adc4;
     font-size: 16px;
 }
 
 .buttons {
-    display: grid;
+    display: flex;
+    justify-content: center;
     gap: 11px;
 }
 
 .social-link {
-    min-height: 54px;
+    min-height: 48px;
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -145,20 +145,149 @@ h1 span {
     font-size: 11px;
 }
 
+.content-section {
+    max-width: 720px;
+    margin: 48px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(226, 207, 255, 0.12);
+}
+
+.about {
+    text-align: center;
+}
+
+.section-label {
+    margin: 0 0 7px;
+    color: #b99bdf;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.content-section h2 {
+    margin: 0;
+    font-size: 27px;
+    letter-spacing: -0.035em;
+}
+
+.about-copy {
+    max-width: 660px;
+    margin: 14px auto 0;
+    color: #b7adc4;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.project-count {
+    padding-bottom: 4px;
+    color: #84798f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.project-card {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(226, 207, 255, 0.12);
+    border-radius: 17px;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(204, 161, 255, 0.32);
+}
+
+.project-image {
+    display: block;
+    width: 100%;
+    height: 145px;
+    background: rgba(12, 9, 18, 0.28);
+    border-bottom: 1px solid rgba(226, 207, 255, 0.09);
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-info {
+    padding: 18px;
+}
+
+.project-type {
+    color: #bc91f1;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    margin: 8px 0 7px;
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.project-info p {
+    margin: 0;
+    color: #a99fb5;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
 .footer-note {
-    margin: 28px 0 0;
+    margin: 38px 0 0;
+    padding-top: 22px;
     color: #84798f;
     font-size: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(226, 207, 255, 0.1);
 }
 
-.footer-note span {
-    color: #c49af3;
-}
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
 
-@media (max-width: 420px) {
     .page {
-        padding: 38px 24px 26px;
+        padding: 36px 20px 24px;
         border-radius: 24px;
+    }
+
+    .content-section {
+        margin-top: 36px;
+        padding-top: 24px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 125px;
+    }
+}
+
+@media (max-width: 380px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .social-link {
+        width: 100%;
     }
 }
 
