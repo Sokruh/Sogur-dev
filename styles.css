@@ -194,6 +194,45 @@ h1 span {
     letter-spacing: 0.1em;
 }
 
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    text-align: left;
+}
+
+.stack-group {
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(226, 207, 255, 0.12);
+    border-radius: 16px;
+}
+
+.stack-group h3 {
+    margin: 0 0 13px;
+    color: #e8d9fb;
+    font-size: 14px;
+}
+
+.stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stack-list li {
+    padding: 6px 9px;
+    color: #c7b9d5;
+    font-size: 12px;
+    line-height: 1.2;
+    background: rgba(177, 126, 232, 0.09);
+    border: 1px solid rgba(204, 161, 255, 0.13);
+    border-radius: 999px;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -273,6 +312,10 @@ h1 span {
     }
 
     .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stack-grid {
         grid-template-columns: 1fr;
     }
 
